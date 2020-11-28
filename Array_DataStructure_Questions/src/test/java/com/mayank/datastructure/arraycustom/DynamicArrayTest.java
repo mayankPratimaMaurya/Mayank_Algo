@@ -9,7 +9,7 @@ class DynamicArrayTest {
     @Test
     public void addElements() throws Exception{
 
-        DynamicArray studentList = new DynamicArray(10);
+        DynamicArray<String> studentList = new DynamicArray<String>(10);
         int beforeAddingCount = studentList.count();
         studentList.add("Mayank");
         assertTrue(studentList.count() == beforeAddingCount+1);
@@ -22,7 +22,7 @@ class DynamicArrayTest {
 
     @Test
     public void addElementMoreThanCapacity() throws Exception{
-        DynamicArray studentList = new DynamicArray(3);
+        DynamicArray<String> studentList = new DynamicArray<String>(3);
         studentList.add("Mayank");
         studentList.add("Pratima");
         studentList.add("Satyam");
@@ -53,7 +53,7 @@ class DynamicArrayTest {
     @Test
     public void removeLastElementFromArray() throws Exception{
 
-        DynamicArray studentList = new DynamicArray(1);
+        DynamicArray<String> studentList = new DynamicArray<String>(1);
         studentList.add("Mayank");
         studentList.add("Pratima");
         studentList.add("Satyam");
@@ -64,7 +64,7 @@ class DynamicArrayTest {
 
     @Test
     public void removeFirstElementFromArray() throws Exception{
-        DynamicArray studentList = new DynamicArray(1);
+        DynamicArray<String> studentList = new DynamicArray(1);
         studentList.add("Mayank");
         studentList.add("Pratima");
         studentList.add("Satyam");
@@ -77,7 +77,7 @@ class DynamicArrayTest {
 
     @Test
     public void removeElementFromMiddle() throws Exception{
-        DynamicArray studentList = new DynamicArray(1);
+        DynamicArray<String> studentList = new DynamicArray<String>(1);
         studentList.add("Mayank");
         studentList.add("Pratima");
         studentList.add("Satyam");
@@ -88,6 +88,17 @@ class DynamicArrayTest {
 
     }
 
+    @Test
+    public void testGenericsWithDifferentTypes() throws Exception{
+        DynamicArray<Integer> studentList = new DynamicArray<Integer>(1);
+        studentList.add(12);
+        studentList.add(14);
+        studentList.add(15);
+        studentList.removeElementFromIndex(1);
+        assertEquals(2,studentList.count());
+        assertEquals(12,studentList.objectAtIndex(0));
+        assertEquals(15,studentList.objectAtIndex(1));
 
+    }
 
 }

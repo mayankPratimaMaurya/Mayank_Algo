@@ -1,17 +1,17 @@
 package com.mayank.datastructure.arraycustom;
 
-public class DynamicArray {
+public class DynamicArray<T> {
 
-    String[] element;
+    T[] element;
     int lastIndex = -1;
     int capacity;
 
     public DynamicArray(int capacity){
         this.capacity = capacity;
-        element = new String[this.capacity];
+        element = (T[])new Object[this.capacity];
     }
 
-    public void add(String name) {
+    public void add(T name) {
 
         if(count() >= this.capacity)
             increaseCapacity();
@@ -27,7 +27,7 @@ public class DynamicArray {
 
     private void copyContentToNewMemoryStack() {
 
-        String[] elementTemp = new String[capacity];
+        T[] elementTemp = (T[])new Object[capacity];;
         for(int i=0; i < count(); i++){
             elementTemp[i]= this.element[i];
         }
@@ -35,7 +35,7 @@ public class DynamicArray {
     }
 
     //O(1)
-    public String objectAtIndex(int index){
+    public T objectAtIndex(int index){
         return element[index];
     }
 
@@ -57,7 +57,7 @@ public class DynamicArray {
     private void shiftElementsToLeftFromIndex( int deleteIndex) {
 
         lastIndex--;
-        String[] tempList = new String[count()];
+        T[] tempList = (T[])new Object[count()];
         boolean reachedDeleteIndex = false;
         for(int i=0; i< count(); i++){
 
@@ -79,8 +79,7 @@ public class DynamicArray {
 
     }
 
-    public String objectAtLastIndex(){
-
+    public T objectAtLastIndex(){
         return element[lastIndex];
     }
 
