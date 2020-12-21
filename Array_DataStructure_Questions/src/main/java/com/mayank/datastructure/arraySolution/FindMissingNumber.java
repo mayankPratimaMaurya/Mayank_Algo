@@ -13,7 +13,7 @@ public class FindMissingNumber {
     }
 
     //O(N)
-   /* public int searchMissingNumber() {
+   public int searchMissingNumber() {
 
         int firstNumber = numberList[0];
 
@@ -29,11 +29,11 @@ public class FindMissingNumber {
         }
 
         return 0;
-    } */
+    }
 
-    //O(log n)
+    //O(log N)
 
-    public int searchMissingNumber() {
+    public int searchMissingNumberFast() {
 
         int missingNumber = 0;
         int startIndex = 0;
