@@ -72,7 +72,6 @@ class DynamicArrayTest {
         assertEquals(2,studentList.count());
         assertEquals("Pratima",studentList.objectAtIndex(0));
         assertEquals("Satyam",studentList.objectAtIndex(1));
-
     }
 
     @Test
