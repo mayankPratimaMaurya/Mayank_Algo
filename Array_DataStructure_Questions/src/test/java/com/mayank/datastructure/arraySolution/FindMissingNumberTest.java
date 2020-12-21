@@ -123,4 +123,19 @@ public class FindMissingNumberTest {
         assertTrue(missingTest.searchMissingNumber() == 0);
 
     }
+
+    @Test
+    public void searchMissingNumberUnsortedArray(){
+
+        int [] numbers = {1,2,3,5,7,4,6,8,9,11};
+        FindMissingNumber missingTest = new FindMissingNumber(numbers);
+        System.out.println(missingTest.searchMissingNumberUnsortedArray());
+        assertTrue(missingTest.searchMissingNumberUnsortedArray() == 10);
+
+        int [] numbers1 = {1,2,3,5,7,4,6,8,9,11,10};
+        FindMissingNumber missingTest1 = new FindMissingNumber(numbers1);
+        System.out.println(missingTest1.searchMissingNumberUnsortedArray());
+        assertTrue(missingTest1.searchMissingNumberUnsortedArray() == 0);
+
+    }
 }

@@ -69,4 +69,18 @@ public class FindMissingNumber {
         return middleIndex;
     }
 
+    //O(N)
+    public int searchMissingNumberUnsortedArray(){
+
+
+        int sumOfAllNumbers = ((numberList.length+1)*(numberList.length+2))/2;
+        int missingNumber = sumOfAllNumbers;
+        for(int i=0; i<numberList.length; i++){
+
+            missingNumber -= numberList[i] ;
+        }
+        return missingNumber == numberList.length+1?0:missingNumber;
+    }
+
+
 }
